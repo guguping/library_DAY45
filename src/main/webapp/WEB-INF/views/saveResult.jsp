@@ -13,8 +13,8 @@
         const result = ${result};
         console.log(result);
         if (result >0){
-            alert("신규 도서 등록 성공! index로 돌아갑니다!");
-            location.href = "/";
+            alert("신규 도서 등록 성공! List로 이동합니다!");
+            location.href = "/list";
         } else {
             alert("문맹이 도서관에 있네 ?");
             location.href = "/save";

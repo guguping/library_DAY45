@@ -25,4 +25,13 @@ public class BookService {
             return bookDTOList;
         }
     }
+
+    public BookDTO select(Long id) {
+        BookDTO bookDTO = bookRepository.select(id);
+        if(bookDTO == null){
+            return null;
+        }else{
+            return bookDTO;
+        }
+    }
 }
