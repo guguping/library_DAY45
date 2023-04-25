@@ -32,9 +32,12 @@ public class BookController {
         return "detail";
     }
     @GetMapping("/list")
-    public String list(){
+    public String list(Model model){
         List<BookDTO> bookDTOList = bookService.findAll();
-
+        for (BookDTO bookDTO : bookDTOList){
+            System.out.println("BookDTO =" + bookDTO);
+        }
+        model.addAttribute("bookDTOList",bookDTOList);
         return "list";
     }
 

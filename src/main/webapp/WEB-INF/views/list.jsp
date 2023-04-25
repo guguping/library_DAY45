@@ -10,10 +10,12 @@
 <html>
 <head>
     <title>list</title>
+    <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
+    <script src="/resources/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
     <h2>응애 나 애기 list</h2>
-    <table>
+    <table class="table table-dark table-hover" style="text-align: center">
         <tr>
             <th>번호</th>
             <th>제목</th>
@@ -21,13 +23,13 @@
             <th>저자</th>
             <th>정가</th>
         </tr>
-        <c:forEach items="bookDTOList" var="s">
+        <c:forEach items="${bookDTOList}" var="s">
         <tr>
-            <th>s.id</th>
-            <th>s.bookName</th>
-            <th>s.bookPublisher</th>
-            <th>s.bookAuthor</th>
-            <th>s.bookPrice</th>
+            <th>${s.id}</th>
+            <th>${s.bookName}</th>
+            <th>${s.bookPublisher}</th>
+            <th>${s.bookAuthor}</th>
+            <th>${s.bookPrice}</th>
         </tr>
         </c:forEach>
     </table>
