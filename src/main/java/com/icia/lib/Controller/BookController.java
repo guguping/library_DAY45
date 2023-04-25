@@ -21,15 +21,11 @@ public class BookController {
         return "save";
     }
     @PostMapping("/save")
-    public String saveParam(@ModelAttribute BookDTO bookDTO){
+    public String saveParam(@ModelAttribute BookDTO bookDTO , Model model){
         int saveResult = bookService.save(bookDTO);
-        if (saveResult > 0){
-            System.out.println("등록성공");
-            return "index";
-        }else{
-            System.out.println("등록실패");
-            return "index";
-        }
+        model.addAttribute("result",saveResult);
+        return "saveResult";
+
     }
     @GetMapping("/detail")
     public String detail(){
@@ -37,6 +33,8 @@ public class BookController {
     }
     @GetMapping("/list")
     public String list(){
+        List<BookDTO> bookDTOList = bookService.findAll();
+
         return "list";
     }
 

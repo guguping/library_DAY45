@@ -5,7 +5,7 @@
 
 <mapper namespace="Book">
     <insert id="save" parameterType="com.icia.lib.DTO.BookDTO">
-        insert into book_table(bookName,bookPublisher,bookAuthor,bookPrice)
+        insert into book_list(bookName,bookPublisher,bookAuthor,bookPrice)
             values (#{bookName},#{bookPublisher},#{bookAuthor},#{bookPrice})
     </insert>
 </mapper>
