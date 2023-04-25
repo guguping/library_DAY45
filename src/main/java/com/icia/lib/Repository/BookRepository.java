@@ -26,4 +26,8 @@ public class BookRepository {
     public BookDTO select(Long id) {
         return sql.selectOne("Book.select",id);
     }
+
+    public int delete(Long id) {
+        return sql.delete("Book.delete",id);
+    }
 }

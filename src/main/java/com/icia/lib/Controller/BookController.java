@@ -34,6 +34,12 @@ public class BookController {
         model.addAttribute("bookDTO",bookDTO);
         return "detail";
     }
+    @GetMapping("/detailDelete")
+    public String detailDelete(@RequestParam("id") Long id,Model model){
+        int deleteResult = bookService.delete(id);
+        model.addAttribute("result",deleteResult);
+        return "detailDelete";
+    }
     @GetMapping("/list")
     public String list(Model model){
         List<BookDTO> bookDTOList = bookService.findAll();

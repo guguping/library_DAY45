@@ -34,4 +34,9 @@ public class BookService {
             return bookDTO;
         }
     }
+
+    public int delete(Long id) {
+        int result = bookRepository.delete(id);
+        return result;
+    }
 }

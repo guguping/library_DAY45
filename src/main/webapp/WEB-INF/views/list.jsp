@@ -23,6 +23,7 @@
 <%--            <th>저자</th>--%>
 <%--            <th>정가</th>--%>
             <th>조회</th>
+            <th>삭제</th>
         </tr>
         <c:forEach items="${bookDTOList}" var="s">
         <tr>
@@ -39,6 +40,7 @@
                 mapper에서는 parameterType="Long"으로 주고
                 resultType="book"으로 하면 됩니다--%>
             <td><a href="/detail?id=${s.id}">조회</a></td>
+            <td><a href="/detailDelete?id=${s.id}" onclick="confirm()">삭제</a></td>
         </tr>
         </c:forEach>
     </table>

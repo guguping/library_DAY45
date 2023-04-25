@@ -16,4 +16,8 @@
     <select id="select" parameterType="Long" resultType="book">
         select * from book_list where id=#{id}
     </select>
+
+    <delete id="delete" parameterType="com.icia.lib.DTO.BookDTO">
+        delete from book_list where id=#{id}
+    </delete>
 </mapper>
