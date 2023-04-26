@@ -17,7 +17,7 @@
         select * from book_list where id=#{id}
     </select>
 
-    <delete id="delete" parameterType="com.icia.lib.DTO.BookDTO">
+    <delete id="delete" parameterType="book">
         delete from book_list where id=#{id}
     </delete>
 

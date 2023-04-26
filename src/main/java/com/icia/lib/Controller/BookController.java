@@ -35,10 +35,9 @@ public class BookController {
         return "detail";
     }
     @GetMapping("/detailDelete")
-    public String detailDelete(@RequestParam("id") Long id,Model model){
+    public String detailDelete(@RequestParam("id") Long id){
         int deleteResult = bookService.delete(id);
-        model.addAttribute("result",deleteResult);
-        return "detailDelete";
+        return "redirect:/list";
     }
     @GetMapping("/list")
     public String list(Model model){
