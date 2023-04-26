@@ -39,4 +39,8 @@ public class BookService {
         int result = bookRepository.delete(id);
         return result;
     }
+
+    public void update(BookDTO bookDTO) {
+        bookRepository.update(bookDTO);
+    }
 }

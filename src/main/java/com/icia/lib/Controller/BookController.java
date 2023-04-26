@@ -50,10 +50,20 @@ public class BookController {
         return "list";
     }
     @GetMapping("/update")
-    public String updaeForm(@RequestParam("id") Long id , Model model){
+    public String updateForm(@RequestParam("id") Long id , Model model){
         BookDTO bookDTO = bookService.select(id);
         model.addAttribute("bookUpdate",bookDTO);
         return "update";
+    }
+
+    // 수정 처리
+    @PostMapping("/update")
+    public String update (@ModelAttribute BookDTO bookDTO){
+        bookService.update(bookDTO);
+        // 수정이 완료되면 상세페이지를 다시 출력
+        // redirect 요청 : 다른 컨트롤러의 주소를 요청(jsp페이지 이름을 리턴하는 것이 아님)
+        return "redirect:/detail?id="+bookDTO.getId();
+//        jsp를 요청하는것이 아닌 detail 메소드를 요청함
     }
 
 }

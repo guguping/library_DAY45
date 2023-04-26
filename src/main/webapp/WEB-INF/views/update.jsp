@@ -12,15 +12,15 @@
 </head>
 <body>
 <form action="/update" method="post">
-  <input type="hidden" name="id" value="${book.id}" readonly><br>
+  <input type="text" name="id" value="${bookUpdate.id}" readonly><br>
   <label for="bookName">제목</label><br>
-  <input type="text" name="bookName" id="bookName" value="${book.bookName}"><br>
+  <input type="text" name="bookName" id="bookName" value="${bookUpdate.bookName}"><br>
   <label for="bookPublisher">출판사</label><br>
-  <input type="text" name="bookPublisher" id="bookPublisher" value="${book.bookPublisher}"><br>
+  <input type="text" name="bookPublisher" id="bookPublisher" value="${bookUpdate.bookPublisher}"><br>
   <label for="bookAuthor">저자</label><br>
-  <input type="text" name="bookAuthor" id="bookAuthor" value="${book.bookAuthor}"><br>
+  <input type="text" name="bookAuthor" id="bookAuthor" value="${bookUpdate.bookAuthor}"><br>
   <label for="bookPrice">정가</label><br>
-  <input type="text" name="bookPrice" id="bookPrice" value="${book.bookPrice}"><br>
+  <input type="text" name="bookPrice" id="bookPrice" value="${bookUpdate.bookPrice}"><br>
   <button>등록</button>
 </form>
 <a href="/">인덱스로 이동</a>
