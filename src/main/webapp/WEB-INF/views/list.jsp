@@ -13,6 +13,12 @@
     <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
     <script src="/resources/js/bootstrap.bundle.min.js"></script>
 </head>
+<style>
+    a{
+        text-decoration-line : none;
+        color: white;
+    }
+</style>
 <body>
     <h2>응애 나 애기 list</h2>
     <table class="table table-dark table-hover" style="text-align: center">
@@ -23,12 +29,13 @@
 <%--            <th>저자</th>--%>
 <%--            <th>정가</th>--%>
             <th>조회</th>
+            <th>수정</th>
             <th>삭제</th>
         </tr>
         <c:forEach items="${bookDTOList}" var="s">
         <tr>
             <td>${s.id}</td>
-            <td>${s.bookName}</td>
+            <td><a href="/detail?id=${s.id}">${s.bookName}</a></td>
 <%--            <th>${s.bookPublisher}</th>--%>
 <%--            <th>${s.bookAuthor}</th>--%>
 <%--            <th>${s.bookPrice}</th>--%>
@@ -39,11 +46,25 @@
                 BookRepositroy에서는 sql.selectOne()을 사용하고
                 mapper에서는 parameterType="Long"으로 주고
                 resultType="book"으로 하면 됩니다--%>
-            <td><a href="/detail?id=${s.id}">조회</a></td>
-            <td><a href="/detailDelete?id=${s.id}" onclick="confirm()">삭제</a></td>
+            <td><button onclick="detail_book(${s.id})">조회</button></td>
+            <td><button onclick="update_book(${s.id})">수정</button></td>
+            <td><button onclick="delete_book(${s.id})">삭제</button></td>
+<%--            <td><a href="/detailDelete?id=${s.id}">삭제</a></td>--%>
+
         </tr>
         </c:forEach>
     </table>
     <a href="/">인덱스로 이동</a>
 </body>
+<script>
+    const detail_book = (id) =>{
+        location.href = "/detail?id="+id;
+    }
+    const update_book = (id) =>{
+        location.href = "/update?id="+id;
+    }
+    const delete_book = (id)=>{
+        location.href = "/detailDelete?id="+id;
+    }
+</script>
 </html>

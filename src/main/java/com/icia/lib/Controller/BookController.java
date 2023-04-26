@@ -49,5 +49,11 @@ public class BookController {
         model.addAttribute("bookDTOList",bookDTOList);
         return "list";
     }
+    @GetMapping("/update")
+    public String updaeForm(@RequestParam("id") Long id , Model model){
+        BookDTO bookDTO = bookService.select(id);
+        model.addAttribute("bookUpdate",bookDTO);
+        return "update";
+    }
 
 }

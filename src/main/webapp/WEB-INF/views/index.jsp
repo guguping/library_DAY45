@@ -13,7 +13,6 @@
 <body>
     <h2>응애 나 애기 인덱스</h2>
     <a href="/save">save이동</a>
-    <a href="/detail">detail이동</a>
     <a href="/list">list이동</a>
 </body>
 </html>
